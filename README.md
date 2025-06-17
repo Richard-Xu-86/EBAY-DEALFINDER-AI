@@ -15,7 +15,8 @@ EBAY DealFinder AI is a Django-based web application that helps users find the *
 ---
 
 ## 🖥️ Screenshots
-
+![image](https://github.com/user-attachments/assets/50f290e9-e201-4a47-92a8-e799c202a63b)
+![image](https://github.com/user-attachments/assets/d9e3b195-00fc-48d8-81bd-0c4545c69b96)
 
 ---
 
