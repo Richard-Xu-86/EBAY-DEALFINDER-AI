@@ -1,0 +1,43 @@
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*.sqlite3
+db.sqlite3
+
+# Virtual environments
+venv/
+.env
+.venv/
+
+# Environment variable files
+.env
+
+# Django migration files (optional, if you want clean commits)
+**/migrations/*.py
+!**/migrations/__init__.py
+
+# VSCode settings (optional)
+.vscode/
+
+# macOS system files
+.DS_Store
+
+# Static/Media files (if generated at runtime)
+staticfiles/
+media/
+
+# Logs
+*.log
+
+# Node modules (if you use React/Vite)
+node_modules/
+
+# Coverage/test files
+htmlcov/
+coverage.xml
+*.cover
+*.pyc
+
+# Compiled JS/CSS if generated
+*.min.js
+*.min.css

@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html> <!-- declares the html document -->
+<html lang="en">  <!-- opens the doc in english -->
+<head> <!-- opens meta info (gives browser and search engine extra content about page) -->
+    <meta charset="UTF-8"> <!-- sets the character encoding to UTF-8 -->
+    <title>EBAY DEALFINDER</title> <!-- browser tab title, ex. for bookmarking -->
+    <link rel="stylesheet" href="{% static 'search/css/style.css' %}"> <!-- load css page -->
+    <link rel="icon" href="{% static 'search/icons/ebay.ico' %}" type="image/x-icon"> <!-- sets tab icon -->
+</head>
+<body>
+    <div class="container">
+        <form method="get"> <!-- Starts a form that will send user input to the server using the GET method. -->
+            <div class="header-bar">
+                <h1>Find the Best Deals On EBAY</h1> 
+                    <select name="marketplace" onchange="this.form.submit()"> <!-- when the user changes the dropdown, the form is auto-submitted — no need to click "Search -->
+                    {% for zone in marketplaces %}
+                        <option value="{{ zone.id }}" {% if zone.id == selected_marketplace %}selected{% endif %}>
+                            {{ zone.name }}
+                        </option>
+                    {% endfor %}
+                </select>
+            </div>
+        
+            <input type="text" name="query" placeholder="Search..." value="{{ query }}"> <!-- anything with name will show up in url -->
+            <button type="submit">Search</button>
+                
+        </form>
+
+        <section>
+            <h2>Overview</h2>
+                <p>Looking for the best EBAY deals online? DealFinder AI helps you quickly find the cheapest and 
+                highest-rated products from across the internet.</p>
+                <p>🔎 Just type in what you're looking for, and we'll show you: </p>
+                <ul> <!-- unordered list -->
+                    <li>🛒 The lowest prices available</li> <!-- list item -->
+                    <li>⭐ Top reviewed items </li> 
+                    <li>🔗 Direct links to buy instantly </li>
+                </ul>
+                <p>Whether you're hunting for a specific item or just browsing, DealFinder AI makes online shopping faster, smarter, 
+                and easier.</p>
+
+        </section>
+
+        <section>
+            <h2>Cheapest results for "{{ query }}"</h2>
+            <ul>
+                {% for item in cheapest %}
+                    <li>
+                        <div class="product-line">
+                            <a href="{{ item.url }}" target="_blank">{{ item.title }}</a> <!-- target="_blank" opens a new tab -->
+                            <div class="product-data">
+                                <span class="price">${{ item.price|floatformat:2 }}</span> <!-- two decimals -->
+                            </div>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </section>
+
+        <section>
+            <h2>Best reviewed results for "{{ query }}"</h2>
+            <ul>
+                {% for item in best_reviewed %}
+                    <li>
+                        <div class="product-line">
+                            <a href="{{ item.url }}" target="_blank">{{ item.title }}</a>
+                            <div class="product-data">
+                                <span class="seller">Seller: {{ item.seller_name }}</span>
+                                <span class="rating">Rating: {{ item.rating }}</span>
+                                <span class="price"> ${{ item.price|floatformat:2 }}</span>
+                            </div>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </section>
+    </div>
+</body>
+</html>

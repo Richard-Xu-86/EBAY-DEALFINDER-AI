@@ -1,0 +1,97 @@
+body {
+    font-family: Arial, sans-serif; /* sets default font to arial, if not available, set to sans-serif */
+    background: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 40px auto; /* top and bottom 40px, left and right auto */
+    background: white;
+    padding: 30px;
+    border-radius: 8px; /* rounds corners */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* adds a subtle shadow, rgba(0, 0, 0, 0.1) means black shadow with 10% opacity */
+}
+
+.header-bar {
+    display: flex; /* flex: side by side */
+    align-items: center; /* vertically aligns */
+    gap: 580px; /* spacing between flex items */
+    flex-wrap: wrap; /* optional: wrap on small screens */
+}
+
+h1, h2 {
+    color: #1a73e8;
+}
+
+input[type="text"] {
+    width: 1045px;
+    flex-grow: 1; /* If the input is inside a flex container, this tells it to grow and fill available space */
+    padding: 10px;
+    font-size: 16px;
+    margin-right: 10px; /* add space to the right */
+}
+
+button {
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    padding: 10px 20px; /* 10px top and bottom, 20px left and right */
+    font-size: 16px;
+    cursor: pointer; /* Changes the mouse to a hand icon when hovering over the button */
+}
+
+select {
+    padding: 10px;
+}
+
+ul {
+    list-style: none; /* Removes the default bullet points from the list */
+    padding: 0; /* 	Removes default spacing inside the list container */
+}
+
+li {
+    margin-bottom: 10px; /*  Adds space below each list item so they aren’t stacked too tightly */
+    padding: 10px; /* 	Adds space inside each item, making them look more like clean blocks */
+    border-bottom: 1px solid #eee; /* Adds a light gray line under each item — often used to visually separate items in a list */
+}
+
+a {
+    max-width: 50%;
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+    padding-left: 20px;
+}
+
+.product-line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.product-data {
+    display: flex;
+    gap: 20px;
+    font-size: 16px;
+}
+
+
+.price {
+    color: #28a745;
+    font-weight: bold;
+    width: 80px;
+    text-align: right;
+}
+
+.rating {
+    width: 100px;    
+    color: #ffc107;
+}
+
+.seller {
+    color:#000000;
+    width: 180px
+}
